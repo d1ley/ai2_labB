@@ -1,0 +1,87 @@
+App\Entity\Location:
+    properties:
+        city:
+            - NotBlank:
+                  message: "City name cannot be empty."
+                  groups: [create, edit]
+            - Length:
+                  min: 2
+                  max: 255
+                  minMessage: "City name must be at least {{ limit }} characters long."
+                  maxMessage: "City name cannot be longer than {{ limit }} characters."
+                  groups: [create, edit]
+
+        country:
+            - NotBlank:
+                  message: "Country code cannot be empty."
+                  groups: [create, edit]
+            - Length:
+                  min: 2
+                  max: 2
+                  exactMessage: "Country code must contain exactly 2 letters (e.g. PL, DE)."
+                  groups: [create, edit]
+
+        latitude:
+            - NotBlank:
+                  message: "Latitude cannot be empty."
+                  groups: [create, edit]
+            - Type:
+                  type: numeric
+                  message: "Latitude must be a number."
+                  groups: [create, edit]
+            - Range:
+                  min: -90
+                  max: 90
+                  notInRangeMessage: "Latitude must be between -90 and 90 degrees."
+                  groups: [create, edit]
+
+        longitude:
+            - NotBlank:
+                  message: "Longitude cannot be empty."
+                  groups: [create, edit]
+            - Type:
+                  type: numeric
+                  message: "Longitude must be a number."
+                  groups: [create, edit]
+            - Range:
+                  min: -180
+                  max: 180
+                  notInRangeMessage: "Longitude must be between -180 and 180 degrees."
+                  groups: [create, edit]
+
+
+App\Entity\Measurement:
+    properties:
+        location:
+            - NotNull:
+                  message: "A location must be selected."
+                  groups: [create, edit]
+
+        date:
+            - NotBlank:
+                  message: "Date cannot be empty."
+                  groups: [create, edit]
+            - Type:
+                  type: \DateTimeInterface
+                  message: "Invalid date format."
+                  groups: [create, edit]
+            - GreaterThanOrEqual:
+                  value: "now"
+                  message: "The date cannot be in the past."
+                  groups: [ create, edit ]
+
+        celsius:
+            - NotBlank:
+                  message: "Temperature cannot be empty."
+                  groups: [create, edit]
+            - Type:
+                  type: numeric
+                  message: "Temperature must be a number."
+                  groups: [create, edit]
+            - Range:
+                  min: -100
+                  max: 100
+                  notInRangeMessage: "Temperature must be between -100°C and 100°C."
+                  groups: [create, edit]
+
+
