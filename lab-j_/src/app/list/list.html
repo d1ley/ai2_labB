@@ -1,0 +1,13 @@
+<div id="list-container">
+  <h3>Lista elementów</h3>
+
+  <input type="text" [(ngModel)]="inputText" placeholder="Wpisz tekst" />
+  <button (click)="inputToArray()">Dodaj</button>
+
+  <ul>
+    <li *ngFor="let element of elements; let i = index">
+      {{ element }}
+      <a href="#" (click)="remove(i); $event.preventDefault()">usuń</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,35 @@
+#list-container {
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 300px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  font-size: 14px;
+  width: 70%;
+  margin-right: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+a {
+  margin-left: 10px;
+  color: red;
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+#frame {
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  width: 200px;
+  border-radius: 8px;
+}
+
+#frame > button {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.green {
+  color: green;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}
